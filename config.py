@@ -1,6 +1,6 @@
 import wpilib
 
-import drive
+import shooter
 
 from utils import Button
 
@@ -13,21 +13,19 @@ rightMotor = wpilib.Jaguar(2)
 
 
 componets = []
+	
 
 
-class DriveConfig(object):
-    robot_drive = wpilib.RobotDrive(leftMotor, rightMotor)
-
-    drive_joy = leftJoy
-
-    # Buttons
-    align_button = Button(rightJoy, 3)
-    hs_button = Button(leftJoy, 1)
 
 
-componets.append(drive.Drive(DriveConfig))
-
-
+class ShooterConfig(object):
+	Motor1 = wpilib.Jaguar(1)
+	Motor2 = wpilib.Jaguar(2)
+	Motor3 = wpilib.Jaguar(3)
+	Motor4 = wpilib.Jaguar(4)
+	
+	shoot_joy = leftJoy
+componets.append(shoot.Shoot(ShooterConfig))
 # Core Functions
 def CheckRestart():
     return
