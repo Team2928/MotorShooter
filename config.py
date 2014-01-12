@@ -8,24 +8,17 @@ from utils import Button
 leftJoy = wpilib.Joystick(2)
 rightJoy = wpilib.Joystick(1)
 
-leftMotor = wpilib.Jaguar(1)
-rightMotor = wpilib.Jaguar(2)
-
 
 componets = []
 	
-
-
-
-
 class ShooterConfig(object):
-	Motor1 = wpilib.Jaguar(1)
-	Motor2 = wpilib.Jaguar(2)
-	Motor3 = wpilib.Jaguar(3)
-	Motor4 = wpilib.Jaguar(4)
+	Motor1 = wpilib.Talon(1)
+	Motor2 = wpilib.Talon(2)
+	Motor3 = wpilib.Talon(3)
+	Motor4 = wpilib.Talon(4)
 	
 	shoot_joy = leftJoy
-componets.append(shoot.Shoot(ShooterConfig))
+componets.append(shooter.Shooter(ShooterConfig))
 # Core Functions
 def CheckRestart():
     return
